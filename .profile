@@ -14,22 +14,7 @@ export PGDATA=/usr/local/pgsql/data/
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 
-# Define some colors first:
-red='\e[0;31m'
-RED='\e[1;31m'
-blue='\e[0;34m'
-BLUE='\e[1;34m'
-cyan='\e[0;36m'
-CYAN='\e[1;36m'
-NC='\e[0m' # No Color
-
-source /usr/local/etc/bash_completion.d/git-completion.bash
-
-function myip {
-  ifconfig | grep "inet " | grep -v 127.0.0.1 | cut -d\  -f2
-}
-
-export PS1="\n$blue\w $red\$(__git_ps1 "%s") $cyan\$rvm_ruby_string$NC \$(myip)\n"
+source .ps1
 
 export PATH="/Users/iMac4/.rvm/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/local/sbin:/bin:/sbin:/usr/bin:/usr/sbin:~/bin:/Users/iMac4/.gem/ruby/1.8/bin:/opt/local/lib/postgresql84/bin/:/usr/local/mysql/bin"
 
@@ -52,6 +37,7 @@ alias git-log="git log --stat"
 alias git-merge="git merge --no-ff"
 alias ls="ls -lah"
 alias rake="rake --trace"
+alias flow="git flow"
 alias pretty_js="java org.mozilla.javascript.tools.shell.Main ~/Downloads/einars-js-beautify-d406247/beautify-cl.js"
 if [[ -s ~/.rvm/scripts/rvm ]] ; then source ~/.rvm/scripts/rvm ; fi
 
